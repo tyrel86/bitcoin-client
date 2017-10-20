@@ -25,6 +25,10 @@ class BitcoinClient::Client
     @api.request 'backupwallet', destination
   end
 
+  def submitblock(block)
+    @api.request 'submitblock', block
+  end
+
   # Creates a multi-signature address and returns a json object
   def createmultisig(nrequired, keys)
       @api.request 'createmultisig', nrequired, keys
